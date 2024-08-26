@@ -19,3 +19,10 @@ services:
     ports:
       - "3200:3200" # Tempo
       - "9411:9411" # zipkin
+  ## Loki
+  my-loki:
+    image: grafana/loki:main
+    container_name: my-loki
+    command: [ "-config.file=/etc/loki/local-config.yaml" ]
+    ports:
+      - "3100:3100"
